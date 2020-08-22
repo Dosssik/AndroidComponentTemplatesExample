@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<template
+    format="5"
+    revision="3"
+    name="Fragment with databinding and ViewModel"
+    description="Creates a Fragment with a ViewModel."
+    minApi="7"
+    minBuildApi="8">
+
+    <category value="Cool Custom Templates" />
+    <formfactor value="Mobile" />
+
+    <parameter
+        id="fragmentClass"
+        name="Fragment Name"
+        type="string"
+        constraints="class|nonempty|unique"
+        default="BlankFragment"
+        help="The name of the fragment class to create" />
+
+    <parameter
+        id="layoutName"
+        name="Fragment Layout Name"
+        type="string"
+        constraints="layout|nonempty|unique"
+        default="blank_fragment"
+        suggest="${classToResource(fragmentClass)}_fragment"
+        help="The name of the layout to create" />
+
+    <parameter
+        id="viewModelName"
+        name="ViewModel Name"
+        type="string"
+        constraints="class|nonempty|unique"
+        default="BlankViewModel"
+        suggest="${underscoreToCamelCase(classToResource(fragmentClass))}ViewModel"
+        help="The name of the ViewModel class to create" />
+
+    <parameter
+        id="createProvider"
+        name="Create view model provider?"
+        type="boolean"
+        default="true" />
+
+    <parameter
+        id="providerName"
+        name="View model provider name"
+        type="string"
+        visibility="createProvider"
+        constraints="class|nonempty|unique"
+        default="BlankViewModelProvider"
+        suggest="${viewModelName}Provider"
+        help="The name of the view model provider" />
+
+
+  <parameter
+      default="true"
+      help="Add generated classes to specified package"
+      id="useSubPackage"
+      name="Use sub package?"
+      type="boolean"/>
+    
+  <parameter
+      default="blank"
+      help="Package name"
+      id="subPackage"
+      name="Package name"
+      type="string"
+      suggest="${underscoreToCamelCase(classToResource(fragmentClass))?lower_case}"
+      visibility="useSubPackage"/>
+
+    <thumbs>
+        <thumb>cool_cat.jpg</thumb>
+    </thumbs>
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
