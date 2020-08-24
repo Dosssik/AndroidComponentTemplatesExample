@@ -1,8 +1,8 @@
-package com.dosssik.templatesplayground.ui.viewmodel
+package com.dosssik.templatesplayground.ui.viewmodel.login
 
 import com.dosssik.templatesplayground.base.BaseViewModel
 
-class ExampleViewModel : BaseViewModel() {
+class LoginViewModel : BaseViewModel() {
 
     // TODO: Implement the ViewModel
 
