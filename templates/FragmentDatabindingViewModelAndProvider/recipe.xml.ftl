@@ -10,9 +10,9 @@
     <open file="${escapedResOut}/layout/${escapeXmlAttribute(layoutName)}.xml" />
 
     <instantiate from="root/src/app_package/BlankFragment.kt.ftl"
-                   to="${escapedSrcOut}/ui/fragment/${subpackageDir}${fragmentClass}.kt" />
+                   to="${escapedSrcOut}/ui/fragment/${subpackageDir}${fragmentName}.kt" />
 
-    <open file="${escapedSrcOut}/ui/fragment/${subpackageDir}${fragmentClass}.kt" />
+    <open file="${escapedSrcOut}/ui/fragment/${subpackageDir}${fragmentName}.kt" />
 
 
     <instantiate from="root/src/app_package/BlankViewModel.kt.ftl"

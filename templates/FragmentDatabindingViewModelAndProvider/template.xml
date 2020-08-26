@@ -11,7 +11,7 @@
     <formfactor value="Mobile" />
 
     <parameter
-        id="fragmentClass"
+        id="fragmentName"
         name="Fragment Name"
         type="string"
         constraints="class|nonempty|unique"
@@ -24,7 +24,7 @@
         type="string"
         constraints="layout|nonempty|unique"
         default="blank_fragment"
-        suggest="${classToResource(fragmentClass)}_fragment"
+        suggest="${classToResource(fragmentName)}_fragment"
         help="The name of the layout to create" />
 
     <parameter
@@ -33,7 +33,7 @@
         type="string"
         constraints="class|nonempty|unique"
         default="BlankViewModel"
-        suggest="${underscoreToCamelCase(classToResource(fragmentClass))}ViewModel"
+        suggest="${underscoreToCamelCase(classToResource(fragmentName))}ViewModel"
         help="The name of the ViewModel class to create" />
 
     <parameter
@@ -59,14 +59,14 @@
       id="useSubPackage"
       name="Use sub package?"
       type="boolean"/>
-    
+
   <parameter
       default="blank"
       help="Package name"
       id="subPackage"
       name="Package name"
       type="string"
-      suggest="${underscoreToCamelCase(classToResource(fragmentClass))?lower_case}"
+      suggest="${underscoreToCamelCase(classToResource(fragmentName))?lower_case}"
       visibility="useSubPackage"/>
 
     <thumbs>
