@@ -6,7 +6,6 @@ import com.dosssik.templatesplayground.base.BaseFragment
 import com.dosssik.templatesplayground.ui.viewmodel.login.LoginViewModel
 import com.dosssik.templatesplayground.ui.viewmodel.login.provider.LoginViewModelProvider
 
-
 class LoginFragment : BaseFragment<LoginViewModel>() {
 
     override val viewModel = LoginViewModelProvider.getViewModel<LoginViewModel>(this)
